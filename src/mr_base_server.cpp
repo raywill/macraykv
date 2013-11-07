@@ -1,5 +1,6 @@
+#include <tbsys.h>
 #include <tbnet.h>
-#include "mr_error_code.h"
+#include "cutil/error_code.h"
 #include "mr_base_server.h"
 
 using namespace tbnet;
@@ -16,7 +17,7 @@ MrBaseServer::~MrBaseServer()
 
 void MrBaseServer::start()
 {
-  int ret = MR_SUCCESS;
+  int ret = CU_SUCCESS;
   char spec[32];
 
   streamer_.setPacketFactory(packet_factory_);
@@ -26,7 +27,7 @@ void MrBaseServer::start()
   
   if (NULL == transport_.listen(spec, &streamer_, this))
   {
-    ret = MR_LISTEN_ERROR;
+    ret = CU_LISTEN_ERROR;
   }
   else
   {
@@ -51,11 +52,11 @@ void MrBaseServer::set_packet_factory(tbnet::IPacketFactory *factory)
 
 int MrBaseServer::set_dev_name(const char *dev)
 {
-  int ret = MR_INVALID_ARGUMENT;
+  int ret = CU_INVALID_ARGUMENT;
   if (NULL != dev)
   {
     strncpy(dev_name_, dev, DEV_NAME_LENGTH);
-    ret = MR_SUCCESS;
+    ret = CU_SUCCESS;
   }
   dev_name_[DEV_NAME_LENGTH - 1] = '\0';
   TBSYS_LOG(INFO, "set dev=%s", dev_name_);
@@ -65,7 +66,7 @@ int MrBaseServer::set_dev_name(const char *dev)
 
 int MrBaseServer::set_listen_port(const int port)
 {
-  int ret = MR_INVALID_ARGUMENT;
+  int ret = CU_INVALID_ARGUMENT;
   if (port > 0)
   {
     port_ = port;

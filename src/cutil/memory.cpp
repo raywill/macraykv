@@ -12,9 +12,9 @@ void *cutil::tc_malloc(const int64_t nbytes, const int32_t mod_id)
   return ptr;
 }
 
-void cutil::tc_free(void *ptr, const int32_t mod_id)
+void cutil::tc_free(void *ptr)
 {
-  UNUSED(mod_id);
+//  UNUSED(mod_id);
   if (ptr)
   {
     free(ptr);

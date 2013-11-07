@@ -8,5 +8,7 @@ AC_CONFIG_FILES([
                  Makefile
                  src/Makefile
                  src/cutil/Makefile
+                 tests/Makefile
+                 tests/cutil/Makefile
                  ])
 AC_OUTPUT
