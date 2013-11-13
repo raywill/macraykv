@@ -37,7 +37,7 @@ int ThreadDataBuffer::delete_thread_key()
   int ret = CU_SUCCESS;
   if (INVALID_THREAD_KEY != key_)
   {
-    if (0 != (ret = pthread_key_delete(key_)))
+    if (0 != (ret = pthread_key_delete(&key_)))
     {
       TBSYS_LOG(ERROR, "cannot delete thread key. key_=%u ret=%d", key_, ret);
     }
