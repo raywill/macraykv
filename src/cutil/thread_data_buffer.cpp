@@ -6,7 +6,7 @@ using namespace cutil;
 
 namespace
 {
-    const pthread_key_t INVALID_THREAD_KEY = UINT32_MAX;
+    const pthread_key_t INVALID_THREAD_KEY = 0xFFFFFFFF;//UINT32_MAX;
 }
 
 ThreadDataBuffer::ThreadDataBuffer(const int64_t size) :
@@ -37,7 +37,7 @@ int ThreadDataBuffer::delete_thread_key()
   int ret = CU_SUCCESS;
   if (INVALID_THREAD_KEY != key_)
   {
-    if (0 != (ret = pthread_key_delete(&key_)))
+    if (0 != (ret = pthread_key_delete(key_)))
     {
       TBSYS_LOG(ERROR, "cannot delete thread key. key_=%u ret=%d", key_, ret);
     }
