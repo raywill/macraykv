@@ -1,5 +1,5 @@
-#ifndef MACRAYKV_CUTIL_LIST_H_
-#define MACRAYKV_CUTIL_LIST_H_
+#ifndef _MACRAYKV_CUTIL_LIST_H_
+#define _MACRAYKV_CUTIL_LIST_H_
 #include "mr_utils.h"
 namespace cutil
 {
@@ -449,4 +449,4 @@ namespace cutil
       allocator_t allocator_;
   };
 }
-#endif // MACRAYKV_CUTIL_LIST_H_
+#endif // _MACRAYKV_CUTIL_LIST_H_

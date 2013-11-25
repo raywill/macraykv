@@ -1,5 +1,5 @@
-#ifndef MACRAYKV_CUTIL_HASH_HASHUTILS_H_
-#define MACRAYKV_CUTIL_HASH_HASHUTILS_H_
+#ifndef _MACRAYKV_CUTIL_HASH_HASHUTILS_H_
+#define _MACRAYKV_CUTIL_HASH_HASHUTILS_H_
 #include "memory_mod_define.h"
 #include "memory.h"
 namespace cutil
@@ -251,4 +251,4 @@ namespace cutil
     };
   }
 }
-#endif //MACRAYKY_CUTIL_HASH_HASHUTILS_H_
+#endif // _MACRAYKY_CUTIL_HASH_HASHUTILS_H_
