@@ -6,7 +6,7 @@ using namespace cutil;
 
 namespace
 {
-    const pthread_key_t INVALID_THREAD_KEY = UINT32_MAX;
+    const pthread_key_t INVALID_THREAD_KEY = 0xFFFFFFFF;//UINT32_MAX;
 }
 
 ThreadDataBuffer::ThreadDataBuffer(const int64_t size) :
